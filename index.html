@@ -1,13 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Integrador Frontend</title>
+        <link rel="stylesheet" href="./style.css">
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+
+    <body>
+
+        <header>
+            <div class="container__principalHeader">
+                <div class="container__contentHeader">
+                    <div class="header__headerSearch">
+                        <input class="header__inputSearch" type="text" placeholder="Search for anything">
+                        <button class="header__buttonSearch">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="header__buttonAdd" id="header-button-add">
+                            Add Element 
+                            <span class="material-symbols-outlined">add_box</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- MAIN -->
+        <main>
+            <section>
+                <div class="container__view">
+                    <aside class="main__listAside">
+                        <div>
+                            <h2>
+                                Categories
+                                <span class="material-symbols-outlined">dataset</span>
+                            </h2>
+                        </div>
+                        <div>
+                            <ul id="main__listFilter"></ul>
+                        </div>
+                    </aside>
+                    <div class="main__store">
+    
+                    </div>
+                </div>
+            </section>
+
+            <section>
+
+                <div class="popup-container" id="modal-popup">
+                    <div class="popup-content">
+                        <div class="popup-header">
+                            <h2>Add or modify</h2>
+                        </div>
+                        <div class="popup-input-container">
+                            <input name="name" id="popup-input-name" placeholder="Enter product name" type="text">
+                            <input name="image" id="popup-input-image" placeholder="image.png" type="url">
+                            <input name="price" id="popup-input-price" value=0 type="number">
+                            <select name="category" id="popup-select-category">
+                                <option>Select category</option>
+                                <option>Burguer</option>
+                                <option>Fries</option>
+                                <option>Pizza</option>
+                                <option>Drink</option>
+                            </select>
+                        </div>
+                        <div class="popup-button-container">
+                            <button class="popup-button cancel" id="popup-button-cancel">Cancel</button>
+                            <button class="popup-button delete" id="popup-button-delete">Delete</button>
+                            <button class="popup-button accept" id="popup-button-accept">Accept</button>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <script type="module" src="/main.js"></script>
+    </body>
+
 </html>

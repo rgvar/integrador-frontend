@@ -1,24 +1,53 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import { handleSetProductLocalStorage } from "./src/persistence/localstorage";
+import { renderCategories } from "./src/services/categories";
+import './style.css';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+renderCategories();
 
-setupCounter(document.querySelector('#counter'))
+// PRODUCT //
+const buttonAdd = document.querySelector('#header-button-add');
+buttonAdd.addEventListener('click', () => {
+    openModal();
+});
+
+// POP-UP //
+
+const buttonPopUpCancel = document.querySelector('#popup-button-cancel');
+
+buttonPopUpCancel.addEventListener('click', () => {
+    closeModal();
+});
+
+// FUNCTIONS //
+const openModal = () => {
+    const modalPopUp = document.querySelector('#modal-popup');
+    modalPopUp.style.display = 'flex';
+};
+const closeModal = () => {
+    const modalPopUp = document.querySelector('#modal-popup');
+    modalPopUp.style.display = 'none';
+};
+
+// SAVE OR MODIFY //
+const acceptButton = document.querySelector('#popup-button-accept');
+acceptButton.addEventListener('click', () => {
+    handleSaveOrModify();
+});
+const handleSaveOrModify = () => {
+    const name = document.querySelector('#popup-input-name').value;
+    const image = document.querySelector('#popup-input-image').value;
+    const price = document.querySelector('#popup-input-price').value;
+    const category = document.querySelector('#popup-select-category').value;
+    
+    let product = {
+        id: new Date().toISOString(),
+        name,
+        image,
+        price,
+        category
+    };
+    handleSetProductLocalStorage(product);
+
+    closeModal();
+};
+
