@@ -4,7 +4,7 @@ export const renderCategories = () => {
 
     ulList.innerHTML = `
     <li id="all">All products</li>
-    <li id="burguers">Burguers</li>
+    <li id="burguers">Burgers</li>
     <li id="fries">Fries</li>
     <li id="pizzas">Pizzas</li>
     <li id="drinks">Drinks</li>

@@ -14,7 +14,6 @@ export const handleGetProductLocalStorage = () => {
 export const handleSetProductLocalStorage = (newProduct) => {
 
     let productsInLocalStorage = handleGetProductLocalStorage();
-    console.log(newProduct);
     
     const existingIndex = productsInLocalStorage.findIndex((product) => product.id == newProduct.id);
     if (existingIndex !== -1) {
