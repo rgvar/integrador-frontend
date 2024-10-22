@@ -1,8 +1,8 @@
 // STORE
 
-import { openModal, setActiveProduct } from "../../main";
-import { handleGetProductLocalStorage } from "../persistence/localstorage"
-
+import { setActiveProduct } from "../../main";
+import { handleGetProductLocalStorage } from "../persistence/local-storage";
+import { openModal } from "./modal";
 
 export const handleGetProductsToStore = () => {
 
@@ -13,10 +13,10 @@ export const handleGetProductsToStore = () => {
 
 export const handleRenderList = (productsIn) => {
 
-    const burgers = productsIn.filter((element) => element.category == "Burger");
+    const burgers = productsIn.filter((element) => element.category == "Burgers");
     const fries = productsIn.filter((element) => element.category == "Fries");
-    const pizzas = productsIn.filter((element) => element.category == "Pizza");
-    const drinks = productsIn.filter((element) => element.category == "Drink");
+    const pizzas = productsIn.filter((element) => element.category == "Pizzas");
+    const drinks = productsIn.filter((element) => element.category == "Drinks");
 
     const renderProductGroup = (products, title) => {
         if (products.length > 0) {

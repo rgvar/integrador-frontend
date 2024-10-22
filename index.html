@@ -16,16 +16,16 @@
     <body>
 
         <header>
-            <div class="container__principalHeader">
-                <div class="container__contentHeader">
-                    <div class="header__headerSearch">
-                        <input class="header__inputSearch" type="text" placeholder="Search for anything">
-                        <button class="header__buttonSearch">
+            <div class="container-principal-header">
+                <div class="container-content-header">
+                    <div class="header-search">
+                        <input id="input-search" class="header-input-search" type="text" placeholder="Search for anything">
+                        <button id="button-search" class="header-button-search">
                             <span class="material-symbols-outlined">search</span>
                         </button>
                     </div>
                     <div>
-                        <button class="header__buttonAdd" id="header-button-add">
+                        <button class="header-button-add" id="header-button-add">
                             Add Element 
                             <span class="material-symbols-outlined">add_box</span>
                         </button>
@@ -35,56 +35,54 @@
         </header>
         <!-- MAIN -->
         <main>
-            <section>
-                <div class="container__view">
-                    <aside class="main__listAside">
-                        <div>
-                            <h2>
-                                Categories
-                                <span class="material-symbols-outlined">dataset</span>
-                            </h2>
-                        </div>
-                        <div>
-                            <ul id="main__listFilter"></ul>
-                        </div>
-                    </aside>
+            
+            <div class="container-view">
+                <aside class="main-list-aside">
+                    <div>
+                        <h2>
+                            Categories
+                            <span class="material-symbols-outlined">dataset</span>
+                        </h2>
+                    </div>
+                    <div>
+                        <ul id="main-list-filter"></ul>
+                    </div>
+                </aside>
 
-                    <div class="main-store">
-                        <div id="store-container">
+                <div class="main-store">
+                    <div id="store-container">
 
-                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section>
 
-                <div class="popup-container" id="modal-popup">
-                    <div class="popup-content">
-                        <div class="popup-header">
-                            <h2>Add or modify</h2>
-                        </div>
-                        <div class="popup-input-container">
-                            <input name="name" id="popup-input-name" placeholder="Enter product name" type="text">
-                            <input name="image" id="popup-input-image" placeholder="image.png" type="url">
-                            <input name="price" id="popup-input-price" value=0 type="number">
-                            <select name="category" id="popup-select-category">
-                                <option>Select a category</option>
-                                <option>Burger</option>
-                                <option>Fries</option>
-                                <option>Pizza</option>
-                                <option>Drink</option>
-                            </select>
-                        </div>
-                        <div class="popup-button-container">
-                            <button class="popup-button cancel" id="popup-button-cancel">Cancel</button>
-                            <button class="popup-button delete" id="popup-button-delete">Delete</button>
-                            <button class="popup-button accept" id="popup-button-accept">Accept</button>
-                        </div>
+
+
+            <div class="popup-container" id="modal-popup">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <h2>Add or modify</h2>
+                    </div>
+                    <div class="popup-input-container">
+                        <input name="name" id="popup-input-name" placeholder="Enter product name" type="text">
+                        <input name="image" id="popup-input-image" placeholder="image.png" type="url">
+                        <input name="price" id="popup-input-price" value=0 type="number">
+                        <select name="category" id="popup-select-category">
+                            <option>Select a category</option>
+                            <option>Burgers</option>
+                            <option>Fries</option>
+                            <option>Pizzas</option>
+                            <option>Drinks</option>
+                        </select>
+                    </div>
+                    <div class="popup-button-container">
+                        <button class="popup-button cancel" id="popup-button-cancel">Cancel</button>
+                        <button class="popup-button delete" id="popup-button-delete">Delete</button>
+                        <button class="popup-button accept" id="popup-button-accept">Accept</button>
                     </div>
                 </div>
-
-            </section>
+            </div>
 
         </main>
 
