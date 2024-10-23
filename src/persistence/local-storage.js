@@ -1,5 +1,9 @@
 // LOCAL STORAGE //
-// get products from local storage
+
+/* 
+    Obtiene los productos almacenados en el local storage,
+    si no existen retorna un array vacío.
+*/
 export const handleGetProductLocalStorage = () => {
 
     const products = JSON.parse(localStorage.getItem('products'));
@@ -10,7 +14,9 @@ export const handleGetProductLocalStorage = () => {
     };
 };
 
-// save products on local storage
+/*
+    Guarda o modifica un producto del local storage.
+*/
 export const handleSetProductLocalStorage = (newProduct) => {
 
     let productsInLocalStorage = handleGetProductLocalStorage();

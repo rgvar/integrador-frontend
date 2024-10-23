@@ -1,16 +1,21 @@
-// STORE
+// STORE //
 
 import { setActiveProduct } from "../../main";
 import { handleGetProductLocalStorage } from "../persistence/local-storage";
 import { openModal } from "./modal";
 
+/*
+    Obtiene los productos del local storage y los muestra en la vista principal del menú.
+*/
 export const handleGetProductsToStore = () => {
 
     const products =  handleGetProductLocalStorage();
     handleRenderList(products);
 };
 
-
+/*
+    Muestra los productos en la vista principal del menú, separándolos por categorías.
+*/
 export const handleRenderList = (productsIn) => {
 
     const burgers = productsIn.filter((element) => element.category == "Burgers");

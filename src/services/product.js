@@ -5,7 +5,10 @@ import { handleGetProductLocalStorage, handleSetProductLocalStorage } from "../p
 import { closeModal } from "../views/modal";
 import { handleGetProductsToStore, handleRenderList } from "../views/store";
 
-
+/*
+    Guarda o modifica productos. Si se invoca sin un producto activo (desde los productos en el menú) tomará los datos de este, permitiendo modificarlo,
+    si no hay producto activo guardará un nuevo producto.
+*/
 export const handleSaveOrModify = () => {
     const activeProduct = getActiveProduct();
     const name = document.querySelector('#popup-input-name').value;
@@ -44,7 +47,9 @@ export const handleSaveOrModify = () => {
 
 };
 
-
+/*
+    Elimina el producto seleccionado.
+*/
 export const handleDeleteProduct = () => {
     
     Swal.fire({

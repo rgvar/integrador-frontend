@@ -1,9 +1,15 @@
-// CATEGORY //
+// CATEGORIES //
 
 import { setActiveCategory } from "../../main";
 import { handleGetProductLocalStorage } from "../persistence/local-storage";
 import { handleRenderList } from "../views/store";
 
+
+/*
+    Filtra los productos por categorías según se seleccione en la barra de categorías
+    y muestra los productos filtrados en la vista principal (en el menú).
+    Si no se selecciona ninguna opción, o se selecciona "All products" se muestran todos sin filtrar.
+*/
 const handleFilterProductByCategory = (categoryIn) => {
     const products = handleGetProductLocalStorage();
 
@@ -32,7 +38,10 @@ const handleFilterProductByCategory = (categoryIn) => {
 };
 
 
-// render
+/*
+    Renderiza y muestra la lista de categorías disponibles para seleccionar.
+    También detecta si seleccionamos una categoría e invoca el método para filtrar el menú.
+*/
 export const renderCategories = () => {
 
     const ulList = document.querySelector('#main-list-filter');
